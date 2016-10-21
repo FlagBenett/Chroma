@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" content="text/html" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Chroma ADP - Askia - Software for Zombies</title>
     <link href="css/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,15 @@
 
 <body>
     <header id="nav" class="large">
-        Back btn &amp; logo
+        <div class="back">
+            <button class="btn" disabled="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.9 60">
+                    <polygon class="a" points="55.9 25.89 13.39 25.89 34.65 4.64 30 0 0 30 30 60 34.65 55.36 13.39 34.1 55.9 34.1 55.9 25.89"/>
+                </svg>
+            </button>
+        </div>
+        <div class="logo"><img src="img/logo_base_inv_hover.svg" /></div>
+        <div class="right"></div>
     </header>
     <div class="content">
         Question caption &amp; responses
