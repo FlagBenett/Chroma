@@ -69,3 +69,26 @@ footer {
     background-color: #3498db;
     width: 100%;
 }
+
+footer .btn {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #EEE;
+    width: 100%;
+    text-align: center;
+    background: #3498db;
+    cursor: pointer;
+    padding: 1em 2em;
+    border: none;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+}
+
+footer .btn:hover {
+    color: #FFF;
+    background: #2980b9;
+}
