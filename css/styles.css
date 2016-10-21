@@ -66,4 +66,6 @@ footer {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
+    background-color: #3498db;
+    width: 100%;
 }
