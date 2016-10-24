@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 body, html {
     font-family: 'PT Sans', sans-serif;
     font-size: 18px;
@@ -31,6 +33,18 @@ body {
     align-items: stretch;
     min-height: 100vh;
 }
+
+::selection {
+    background: #3498DB;
+    color: #FFF;
+}
+
+::-moz-selection {
+    background: #3498DB;
+    color: #FFF;
+}
+
+/* HEADER */
 
 header {
     -webkit-order: 1;
@@ -140,6 +154,8 @@ header {
     align-self: center;
 }
 
+/* SURVEY CONTENTS */
+
 div.content {
     -webkit-order: 2;
     -ms-flex-order: 2;
@@ -152,9 +168,19 @@ div.content {
     align-self: center;
     font-size: 2rem;
     width: 60vw;
-    text-align: center;
+    text-align: left;
     padding: 2em 0;
 }
+
+div.content h3 {
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: .88rem;
+    color: #C7A002;
+}
+
+/* FOOTER */
 
 footer {
     -webkit-order: 3;
