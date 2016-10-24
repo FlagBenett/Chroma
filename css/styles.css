@@ -78,10 +78,43 @@ header {
     cursor: pointer;
 }
 
+.back button::after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -45px;
+    background: #C7A002;
+    border-radius: 100%;
+    opacity: .6;
+    transform: scale(0);
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.back button:not(:active):after {
+    animation: ripple 1s ease-out;
+}
+
 .back button svg {
     width: 30px;
-    fill: #EEE;
-    transition: fill ease-in .3;
+    fill: #C7A002;
+    transition: fill ease-in .3s;
 }
 
 .back button:hover svg {
