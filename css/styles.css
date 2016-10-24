@@ -67,6 +67,7 @@ header {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
+    align-self: center;
 }
 
 .back button {
@@ -125,6 +126,7 @@ header {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
+    align-self: center;
 }
 
 .logo img {
@@ -135,6 +137,7 @@ header {
     -webkit-order: 3;
     -ms-flex-order: 3;
     order: 3;
+    align-self: center;
 }
 
 div.content {
