@@ -170,6 +170,18 @@ div.content {
     width: 60vw;
     text-align: left;
     padding: 2em 0;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    justify-content: center;
 }
 
 div.content h3 {
@@ -178,6 +190,39 @@ div.content h3 {
     text-transform: uppercase;
     font-size: .88rem;
     color: #C7A002;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
+}
+
+p.caption {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
+}
+
+.responses {
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
 }
 
 .responses ul {
@@ -216,7 +261,7 @@ input[type=radio] {
     background: #f1c40f;
     border-radius: 50%;
     box-sizing: border-box;
-    border: .125em solid #EEE;
+    border: .125em solid #FFF;
     box-shadow: inset 0 0 0 0 #FFF;
     position: relative;
     cursor: pointer;
