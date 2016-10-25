@@ -371,6 +371,7 @@ input[type="checkbox"]:checked+label:before {
     left: 10px;
     border-radius: 0;
     opacity: 1;
+    border-color: #FFF;
     border-top-color: transparent;
     border-left-color: transparent;
     transform: rotate(45deg);
