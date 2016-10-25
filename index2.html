@@ -32,7 +32,7 @@
 <body>
     <header id="nav" class="large">
         <div class="back">
-            <button class="btn disabled" disabled="true">
+            <button class="btn" onclick="window.location.href='index.html'">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.9 60">
                     <polygon class="backArrow" points="55.9 25.89 13.39 25.89 34.65 4.64 30 0 0 30 30 60 34.65 55.36 13.39 34.1 55.9 34.1 55.9 25.89"/>
                 </svg>
@@ -49,22 +49,20 @@
         <div class="responses">
                 <ul>
                     <li>
-                        <input type='checkbox' id="item1" name="corporate">
-                        <label for="item1">Proactive domination</label>
+                        <input type='radio' id="item1" name="corporate"><label for="item1">Proactive domination</label>
                     </li>
                     <li>
-                        <input type='checkbox' id="item2" name="corporate">
-                        <label for="item2">Streamlined cloud solution</label>
+                        <input type='radio' id="item2" name="corporate"><label for="item2">Streamlined cloud solution</label>
                     </li>
                     <li>
-                        <input type='checkbox' id="item3" name="corporate">
-                        <label for="item3">Ballpark added value</label>
+                        <input type='radio' id="item3" name="corporate"><label for="item3">Ballpark added value</label>
                     </li>
                 </ul>
             </div>
     </div>
     <footer>
-        <button class="btn primary" onclick="window.location.href='index2.html'">Next question</button>
+        <button class="btn primary">Next question</button>
+        <!--  onclick="window.location.href='index2.html'" -->
     </footer>
 </body>
 
