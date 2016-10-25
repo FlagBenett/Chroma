@@ -146,6 +146,10 @@ header {
     fill: #C7A002;
 }
 
+.back button:focus {
+    outline: none;
+}
+
 .logo {
     -webkit-order: 2;
     -ms-flex-order: 2;
@@ -277,7 +281,7 @@ input[type=radio] {
     position: relative;
     cursor: pointer;
     animation: radio .6s;
-    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s linear .17s;
+    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color .4s linear .17s;
 }
 
 input[type=radio]:focus {
@@ -289,9 +293,8 @@ input[type=radio]:active {
 }
 
 input[type=radio]:checked {
-    border-color: #C7A002;
-    box-shadow: inset 0 0 0 .5em #C7A002;
-    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s;
+    border-color: #F1C40F;
+    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color .4s linear .17s;
 }
 
 input[type=radio]:before, input[type=radio]:after {
@@ -305,6 +308,10 @@ input[type=radio]:before, input[type=radio]:after {
     transition: transform .3s cubic-bezier(.2, .3, 0, 1), opacity .3s cubic-bezier(.2, .3, 0, 1);
     top: -.085em;
     left: -.125em;
+}
+
+input[type=radio]:checked::before, input[type=radio]:checked::after {
+    background: #C7A002;
 }
 
 input[type=radio]:after {
