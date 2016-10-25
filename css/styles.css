@@ -44,7 +44,6 @@ body {
     color: #FFF;
 }
 
-
 /* HEADER */
 
 header {
@@ -167,7 +166,6 @@ header {
     order: 3;
     align-self: center;
 }
-
 
 /* SURVEY CONTENTS */
 
@@ -371,7 +369,7 @@ input[type="checkbox"]+label:before {
 input[type="checkbox"]:checked+label:before {
     width: 10px;
     top: -5px;
-    left: 5px;
+    left: 10px;
     border-radius: 0;
     opacity: 1;
     border-top-color: transparent;
@@ -379,7 +377,6 @@ input[type="checkbox"]:checked+label:before {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 
 /* FOOTER */
 
