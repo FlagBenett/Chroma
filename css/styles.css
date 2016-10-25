@@ -197,6 +197,18 @@ div.content {
     justify-content: center;
 }
 
+@media (max-width: 800px) {
+    div.content {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 500px) {
+    div.content {
+        width: 90vw;
+    }
+}
+
 div.content h3 {
     margin: 0;
     font-weight: 400;
