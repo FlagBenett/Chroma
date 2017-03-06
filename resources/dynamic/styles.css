@@ -1,0 +1,203 @@
+{%
+'Theme
+Dim WhiteColor = Theme.WhiteColor
+Dim BlackColor = Theme.BlackColor
+Dim PrimaryColor = Theme.PrimaryColor
+Dim PrimaryDarkColor = Theme.PrimaryDarkColor
+Dim PrimaryLightColor = Theme.PrimaryLightColor
+Dim SecondaryColor = Theme.SecondaryColor
+Dim SecondaryDarkColor = Theme.SecondaryDarkColor
+Dim FontFamily = Theme.FontFamily
+Dim BaseFS = Theme.BaseFS
+Dim LargeFS = Theme.LargeFS
+Dim NormalFS = Theme.NormalFS
+Dim SmallFS = Theme.SmallFS
+Dim NeutralColor = Theme.NeutralColor
+Dim NeutralDarkColor = Theme.NeutralDarkColor
+Dim NeutralLightColor = Theme.NeutralLightColor
+Dim ErrorColor = Theme.ErrorColor
+Dim BorderWidth = Theme.BorderWidth
+Dim BorderRadius = Theme.BorderRadius
+Dim VPadding = Theme.VPadding
+Dim HPadding = Theme.HPadding
+Dim LineHeight = Theme.LineHeight
+Dim radio_checkbox_size = CurrentADP.Var("radio_checkbox_size")
+%}
+
+::selection {
+    color: rgba({%= WhiteColor %});
+    background-color: rgba({%= PrimaryColor %});
+}
+::-moz-selection {
+    color: rgba({%= WhiteColor %});
+    background-color: rgba({%= PrimaryColor %});
+}
+body, html {
+    font-family: {%= FontFamily %};
+    font-size: {%= BaseFS %};
+}
+::-webkit-input-placeholder {
+    font-family: {%= FontFamily %};
+}
+::-moz-placeholder {
+    font-family: {%= FontFamily %};
+}
+:-ms-input-placeholder {
+    font-family: {%= FontFamily %};
+}
+:-moz-placeholder {
+    font-family: {%= FontFamily %};
+}
+input, textarea, keygen, select, button {
+    font-family: {%= FontFamily %};
+}
+header h2 {
+    font-family: {%= FontFamily %};
+    font-size: {%= LargeFS %};
+}
+body, html {
+    color: rgba({%= BlackColor %});
+}
+
+body, header.large, .question {
+    background-color: rgba({%= WhiteColor %});
+}
+body {
+    line-height: {%= LineHeight %};
+}
+header.large, .question, input[type=text], input[type=number], textarea {
+    color: rgba({%= BlackColor %});
+}
+
+.progressWrapper {
+    padding: 0;
+} 
+
+.progress {
+    border-bottom: 1px solid rgba({%= NeutralLightColor.ToRGB() %},0.5);
+}
+
+.progress-bar {
+    background-color: rgba({%= SecondaryColor %});
+    border-radius: none;
+    width: {%= Interview.Progress %}%;
+}
+.progress-value {
+    font-size: {%= SmallFS %};
+}
+.question {  
+    border-radius: {%= BorderRadius %};
+    padding: {%= VPadding %} {%= HPadding %};
+    margin: 0 auto {%= VPadding %} auto;
+    margin: 0 auto 3em auto\9;
+}
+
+.askia-question-label {
+    font-size: {%= NormalFS %};
+    padding: {%= VPadding %} 0;
+}
+.askia-control .askia-question-label {
+    font-size: {%= NormalFS %};
+    padding: 0;
+}
+.askia-grid-row:nth-child(even) td {
+    background-color: rgba({%= NeutralLightColor.ToRGB() %},1.0);
+}
+.askia-grid-row td, .askia-grid-header td {
+    border-bottom: {%= BorderWidth %} solid rgba({%= NeutralDarkColor.ToRGB() %},1.0);
+}
+.askia-grid-row:hover td {
+    background-color: rgba({%= NeutralColor.ToRGB() %},1.0);
+}
+
+.askia-grid-row .askia-question-label {
+    font-size: {%= NormalFS %};
+    padding-left: 0.5em;
+}
+
+.instruction {
+    color: rgba({%= NeutralDarkColor %});
+    font-family: {%= FontFamily %};
+}
+
+.askia-errors-summary {
+    background: rgba({%= ErrorColor %});
+    border: {%= BorderWidth %} solid rgba({%= ErrorColor %});
+    border-radius: {%= BorderRadius %};
+    color: #FFF;
+    padding: {%= VPadding %} {%= HPadding %};
+}
+
+.askia-caption {
+    font-size: {%= NormalFS %};
+}
+.askia-response {
+    font-size: {%= NormalFS %};
+    padding: 5px;
+}
+.btn {
+    font-family: {%= FontFamily %};
+    font-size: {%= NormalFS %};
+}
+.primary {
+	background-color: rgba({%= PrimaryColor %});
+    color: rgba({%= NeutralLightColor %});
+    padding: {%= VPadding %} {%= HPadding %};
+    transition: background-color .3s cubic-bezier(0.25, 0.1, 0.25, 0.1), color .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+}
+.primary:hover {
+	background-color: rgba({%= PrimaryDarkColor %});
+    color: rgba({%= WhiteColor %});
+}
+.back label:after {
+    background: rgba({%= NeutralColor %});
+}
+.back svg {
+    fill: rgba({%= NeutralColor %});
+    transition: fill ease-in .3s;
+}
+
+.back label svg:hover {
+    fill: rgba({%= SecondaryColor %});
+}
+
+.back label.disabled svg:hover {
+    fill: rgba({%= NeutralColor %});
+}
+input[type=checkbox]:checked~label.askia-response-label, input[type=radio]:checked~label.askia-response-label {
+    color: rgba({%= SecondaryColor %});
+}
+input[type=radio] + label.askia-radio,
+input[type=checkbox] + label.askia-checkbox {
+    width: {%= radio_checkbox_size %};
+    height: {%= radio_checkbox_size %};
+    border: {%= BorderWidth %} solid rgba({%= NeutralDarkColor %});
+    box-shadow: inset 0 0 0 0 rgba({%= SecondaryColor %});
+}
+input[type=checkbox]:checked + label.askia-checkbox,
+input[type=radio]:checked + label.askia-radio {
+    background: rgba({%= SecondaryColor %});
+    border-color: rgba({%= SecondaryColor %});
+    box-shadow: inset 0 0 0 .5em rgba({%= SecondaryColor %});
+    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s;
+}
+input[type=checkbox] + label.askia-checkbox:before,
+input[type=checkbox] + label.askia-checkbox:after,
+input[type=radio] + label.askia-radio:before,
+input[type=radio] + label.askia-radio:after {
+    top: -{%= BorderWidth %};
+    left: -{%= BorderWidth %};
+    font-size: {%= radio_checkbox_size %};
+}
+
+input[type=text], input[type=number], textarea {
+    font-size: {%= NormalFS %};
+    border: {%= BorderWidth %} solid rgba({%= NeutralColor %});
+    padding: {%= VPadding %} {%= HPadding %};
+}
+input[type=text]:focus, input[type=number]:focus, textarea:focus {
+    border: {%= BorderWidth %} solid rgba({%= SecondaryColor %});
+}
+input[type=text]:hover, input[type=number]:hover, textarea:hover {
+    border: {%= BorderWidth %} solid rgba({%= NeutralDarkColor %});
+}

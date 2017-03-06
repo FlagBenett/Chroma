@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{%= CurrentADP.Var("window_title") %}</title>
+        <meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Askia - software for surveys">
+        <meta name="theme-color" content="#DF4335">
+        <link rel="icon" href="{%:= CurrentADP.URLTo("static/favicon.png") %}">
+        <!--- ASKIA HEAD HERE -->
+        <askia-head />
+    </head>
+    <body>
+        <header id="nav" class="large">
+            {%
+            Dim attrDisabled = On(Interview.IsFirstPage, "disabled=\"disabled\"", "")
+            Dim classDisabled = On(Interview.IsFirstPage, "disabled", "")
+            Dim SurveyName = CurrentADP.Var("survey_name")
+            Dim SurveyLogoSrc = CurrentADP.Var("survey_logo_src")
+            Dim SurveyLogoAlt = CurrentADP.Var("survey_logo_alt")
+            Dim errors_caption = CurrentADP.Var("errors_caption") %}
+			<div class="progressWrapper">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                    {% If CurrentADP.Var("display_progress_value") = "yes" Then %}
+                    <div class="progress-value">{%= Interview.Progress.ToInt() %}%</div>
+                    {% EndIf %}
+                </div>
+            </div>
+            {% If (SurveyLogoSrc <> "") Then  %}
+            <div class="logo-survey"><img src="{%= SurveyLogoSrc %}" alt="{%= SurveyLogoAlt %}" /></div>
+            {% End If %}
+            {% If (SurveyLogoSrc = "") and (SurveyName = "") Then  %}
+            <div class="logo-survey"><img src="{%:= CurrentADP.URLTo("static/logo-askia-rvb.png") %}" alt="Askia logo" /></div>
+            {% End If %}
+            {% If (SurveyLogoSrc = "") and (SurveyName <> "") Then  %}
+            <h2>{%= SurveyName %}</h2>
+            {% End If %}
+        </header>
+            <!--- ASKIA FORM BEGINS HERE -->
+            <askia-form>
+                <div class="main">
+                <div class="question">
+                    {% If CurrentQuestions.Errors.Count Then %}
+                    <div class="askia-errors-summary">
+                        {% If (errors_caption <> "") Then  %}
+                        <p>{%:= errors_caption %}</p>
+                        {% End If %}
+                        <ul>
+                            {% Dim errorIndex = 1
+							For errorIndex = 1 To CurrentQuestions.Errors.Count %}
+                            <li>{%= CurrentQuestions.Errors[errorIndex].Message %}</li>
+                            {% Next %}
+                        </ul>
+                    </div>
+                    {% End If %}
+                    <!--- ASKIA QUESTIONS HERE -->
+                    <askia-questions />
+                </div>
+                <footer>
+                    <input type="submit" name="Next" class="btn primary keyframe" value="{%= CurrentADP.Var("next_caption") %}" />
+                </footer>
+                {% If CurrentADP.Var("display_previous") = "yes" Then %}
+                    
+                    <div class="back">
+                        <label for="backButton" class="{%:= classDisabled %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.9 60">
+                                <polygon class="backArrow" points="55.9 25.89 13.39 25.89 34.65 4.64 30 0 0 30 30 60 34.65 55.36 13.39 34.1 55.9 34.1 55.9 25.89"/>
+                            </svg>
+                            <input type="submit" name="Previous" id="backButton" value="{%= CurrentADP.Var("previous_caption") %}" {%:= attrDisabled %} />
+                        </label>
+                    </div>
+                {% End If %}
+                </div>
+            </askia-form>
+            <!--- ASKIA FORM ENDS HERE -->
+        <!--- ASKIA FOOT HERE -->
+        <askia-foot />
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                document.addEventListener("click", function(event){
+                    var el = event.target || event.srcElement;
+                    if (el.nodeName === "TD" && el.className.indexOf("askia-response") >= 0) {
+						document.getElementById(el.lastElementChild.attributes.for.value).click();
+                    }
+                },false);
+            });
+        </script>
+    </body>
+</html>
