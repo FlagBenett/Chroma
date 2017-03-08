@@ -22,7 +22,7 @@
                         </Modality>
                     </Modalities>
                 </Question>
-                <Question ID="2" Shortcut="multiple" ADCName="default"  Order="2" ElementType="question" AllowDK="0" QuestionType="closed" MaxResponse="3" MinResponse="0" Translated="0">
+                <Question ID="2" Shortcut="multiple" ADCName="default"  Order="2" ElementType="question" AllowDK="1" QuestionType="closed" MaxResponse="3" MinResponse="0" Translated="0">
                     <LongCaption>Long caption of the multi-coded question</LongCaption>
                     <Modalities>
                         <Modality ID="5">

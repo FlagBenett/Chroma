@@ -59,13 +59,13 @@ body, html {
     color: rgba({%= BlackColor %});
 }
 
-body, header.large, .question {
+body, header.large, .askiaquestions {
     background-color: rgba({%= WhiteColor %});
 }
 body {
     line-height: {%= LineHeight %};
 }
-header.large, .question, input[type=text], input[type=number], textarea {
+header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     color: rgba({%= BlackColor %});
 }
 
@@ -85,7 +85,7 @@ header.large, .question, input[type=text], input[type=number], textarea {
 .progress-value {
     font-size: {%= SmallFS %};
 }
-.question {  
+.askiaquestions {  
     border-radius: {%= BorderRadius %};
     padding: {%= VPadding %} {%= HPadding %};
     margin: 0 auto {%= VPadding %} auto;
