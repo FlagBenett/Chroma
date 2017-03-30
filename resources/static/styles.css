@@ -58,7 +58,6 @@ header h2 {
 }
 
 .progress { 
-    height: .9em;
     position: absolute;
     width: 100%;
     top: 0;
