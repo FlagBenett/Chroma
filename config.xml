@@ -75,6 +75,10 @@
         <description><![CDATA[Next caption]]></description>
         <value><![CDATA[NEXT QUESTION]]></value>
       </property>
+      <property xsi:type="standardProperty" id="next_background_color" name="Next background color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgba">
+        <description><![CDATA[The background color of the next button]]></description>
+        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+      </property>
     </category>
   </properties>
 </page>

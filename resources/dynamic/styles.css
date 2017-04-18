@@ -2,7 +2,7 @@
 'Theme
 Dim WhiteColor = Theme.WhiteColor
 Dim BlackColor = Theme.BlackColor
-Dim PrimaryColor = Theme.PrimaryColor
+Dim PrimaryColor = CurrentADP.Var("next_background_color")
 Dim PrimaryDarkColor = Theme.PrimaryDarkColor
 Dim PrimaryLightColor = Theme.PrimaryLightColor
 Dim SecondaryColor = Theme.SecondaryColor
@@ -108,7 +108,7 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     border-bottom: {%= BorderWidth %} solid rgba({%= NeutralDarkColor.ToRGB() %},1.0);
 }
 .askia-grid-row:hover td {
-    background-color: rgba({%= NeutralColor.ToRGB() %},1.0);
+    background-color: rgba({%= BlackColor.ToRGB() %},.1);
 }
 
 .askia-grid-row .askia-question-label {
@@ -139,6 +139,9 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
 .askia-response:hover {
     background-color : rgba({%= BlackColor.ToRGB() %}, .1); 
     cursor: pointer;
+}
+.askia-grid-header .askia-response:hover {
+    background-color : transparent; 
 }
 .btn {
     font-family: {%= FontFamily %};

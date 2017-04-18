@@ -80,7 +80,7 @@
             document.addEventListener("DOMContentLoaded", function(){
                 document.addEventListener("click", function(event){
                     var el = event.target || event.srcElement;
-                    if (el.nodeName === "TD" && el.className.indexOf("askia-response") >= 0) {
+                    if (el.className.indexOf("askia-response") >= 0) {
 						document.getElementById(el.lastElementChild.attributes.for.value).click();
                     }
                 },false);
