@@ -11,6 +11,9 @@
   window.CustomEvent = CustomEvent;
 })();
 (function () {
+    if (!document.querySelector(".hasLiveRouting")) {
+    	return;    
+    }
     if (window.AskiaScript) {
 		AskiaScript.executeLiveRouting = function () {};
 	} 
