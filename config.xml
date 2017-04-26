@@ -20,6 +20,7 @@
       <description><![CDATA[Default output]]></description>
       <content fileName="favicon.png" type="image" mode="static" position="none" />
       <content fileName="logo-askia-rvb.png" type="image" mode="static" position="none" />
+      <content fileName="askia.live.routing.js" type="javascript" mode="dynamic" position="head" />
       <content fileName="html5-ie.js" type="javascript" mode="static" position="head" />
       <content fileName="normalize.min.css" type="css" mode="static" position="head" />
       <content fileName="styles.min.css" type="css" mode="static" position="head" />
