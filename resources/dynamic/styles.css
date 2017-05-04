@@ -114,6 +114,7 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
 .askia-grid-row .askia-question-label {
     font-size: {%= NormalFS %};
     padding-left: 0.5em;
+    width: 45%;
 }
 
 .instruction {
@@ -201,7 +202,7 @@ input[type=radio] + label.askia-radio:after {
 input[type=text], input[type=number], textarea {
     font-size: {%= NormalFS %};
     border: {%= BorderWidth %} solid rgba({%= NeutralColor %});
-    padding: {%= VPadding %} {%= HPadding %};
+    padding: 0.5em 0.5em;
 }
 input[type=text]:focus, input[type=number]:focus, textarea:focus {
     border: {%= BorderWidth %} solid rgba({%= SecondaryColor %});
