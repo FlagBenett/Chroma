@@ -3,7 +3,7 @@
 Dim WhiteColor = Theme.WhiteColor
 Dim BlackColor = Theme.BlackColor
 Dim PrimaryColor = CurrentADP.Var("next_background_color")
-Dim PrimaryDarkColor = Theme.PrimaryDarkColor
+Dim PrimaryDarkColor = CurrentADP.Var("next_hover_background_color")
 Dim PrimaryLightColor = Theme.PrimaryLightColor
 Dim SecondaryColor = Theme.SecondaryColor
 Dim SecondaryDarkColor = Theme.SecondaryDarkColor
@@ -67,6 +67,7 @@ body {
 }
 header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     color: rgba({%= BlackColor %});
+    background-color: rgba({%= WhiteColor %});
 }
 
 .progressWrapper {
@@ -91,6 +92,7 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     padding: {%= VPadding %} {%= HPadding %};
     margin: 0 auto {%= VPadding %} auto;
     margin: 0 auto 3em auto\9;
+    box-shadow: 0 4px 5px 0 rgba({%= BlackColor.ToRGB() %}, .14), 0 1px 10px 0 rgba({%= BlackColor.ToRGB() %}, .12), 0 2px 4px -1px rgba({%= BlackColor.ToRGB() %}, .2);
 }
 
 .askia-question-label {
@@ -148,6 +150,9 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     font-family: {%= FontFamily %};
     font-size: {%= NormalFS %};
 }
+.btn:after {
+    box-shadow: inset 0 0 0 5em rgba({%= WhiteColor.ToRGB() %}, 0.5);
+}
 .primary {
 	background-color: rgba({%= PrimaryColor %});
     color: rgba({%= NeutralLightColor %});
@@ -155,7 +160,7 @@ header.large, .askiaquestions, input[type=text], input[type=number], textarea {
     transition: background-color .3s cubic-bezier(0.25, 0.1, 0.25, 0.1), color .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
 }
 .primary:hover {
-	background-color: rgba({%= PrimaryDarkColor %});
+    background-color: rgba({%= PrimaryDarkColor %});
     color: rgba({%= WhiteColor %});
 }
 .back label:after {

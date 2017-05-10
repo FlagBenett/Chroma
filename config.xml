@@ -80,6 +80,10 @@
         <description><![CDATA[The background color of the next button]]></description>
         <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
       </property>
+      <property xsi:type="standardProperty" id="next_hover_background_color" name="Next hover background color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgba">
+        <description><![CDATA[The background color of the next button when hovered]]></description>
+        <value><![CDATA[{%= Theme.PrimaryDarkColor %}]]></value>
+      </property>
     </category>
   </properties>
 </page>
