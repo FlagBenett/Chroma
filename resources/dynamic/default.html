@@ -28,7 +28,8 @@
             Dim SurveyName = CurrentADP.Var("survey_name")
             Dim SurveyLogoSrc = CurrentADP.Var("survey_logo_src")
             Dim SurveyLogoAlt = CurrentADP.Var("survey_logo_alt")
-            Dim errors_caption = CurrentADP.Var("errors_caption") %}
+            Dim errors_caption = CurrentADP.Var("errors_caption")
+			Dim showTimer = CurrentADP.Var("showTimer") %}
 			<div class="progressWrapper">
                 <div class="progress">
                     <div class="progress-bar"></div>
@@ -65,10 +66,14 @@
                     </div>
                     {% End If %}
                     <!--- ASKIA QUESTIONS HERE -->
+                    
                     <askia-questions />
                 </div>
                 <footer>
-                    <input type="submit" name="Next" class="btn primary keyframe" value="{%= CurrentADP.Var("next_caption") %}" />
+                    {% If (showTimer = 1) Then  %} 
+                    <div id="timerBottom"></div>
+                     {% Endif %}
+                    <input type="submit" name="Next" class="btn primary keyframe" value="{%=CurrentADP.Var("next_caption") %} " />
                 </footer>
                 {% If CurrentADP.Var("display_previous") = "yes" Then %}
                     
