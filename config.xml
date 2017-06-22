@@ -26,7 +26,6 @@
       <content fileName="styles.min.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
       <content fileName="askia.ajax.min.js" type="javascript" mode="static" position="foot" />
-      <content fileName="timerBottom.js" type="javascript" mode="dynamic" position="head" />
     </output>
   </outputs>
   <properties>
@@ -84,12 +83,6 @@
       <property xsi:type="standardProperty" id="next_hover_background_color" name="Next hover background color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgba">
         <description><![CDATA[The background color of the next button when hovered]]></description>
         <value><![CDATA[{%= Theme.PrimaryDarkColor %}]]></value>
-      </property>
-    </category>
-    <category id="Timer" name="Timer">
-      <property xsi:type="standardProperty" id="showTimer" name="Show survey timer" type="boolean" require="false" visible="true">
-        <description><![CDATA[]]></description>
-        <value><![CDATA[1]]></value>
       </property>
     </category>
   </properties>
