@@ -1,2 +1,2 @@
 FROM ghost:alpine
-COPY demo .
+COPY demo /var/lib/ghost/content
